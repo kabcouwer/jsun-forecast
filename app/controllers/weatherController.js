@@ -1,5 +1,4 @@
 const openWeatherService = require('../services/openWeatherService');
-// const Weather = require('../models/weatherModel');
 
 async function getWeatherByCity(req, res) {
   const city = req.params.city;

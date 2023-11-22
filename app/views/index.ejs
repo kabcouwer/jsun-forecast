@@ -4,17 +4,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
+    <title>Weather App Using NodeJS</title>
     <link rel="stylesheet" href="/styles/main.css">
 </head>
 <body>
-  <h1>Weather App</h1>
-  <label for="cityInput">Enter city:</label>
+  <h1>&#x2600; Weather App &#x2600;</h1>
+  <form action="/weather" method="get">
+    <input type="text" name="city" placeholder="Enter city name" />
+    <button type="submit">Get Weather</button>
+  </form>
+    <% if (error) { %>
+      <p class="error"><%= error %></p>
+    <% } else if (weather) { %>
+      <div class="weatherCard">
+        <p>
+          <i class=""></i>
+          <%= weather.city %>
+        </p>
+        <p>
+          <i class=""></i>
+          <%= weather.temperature %>&deg;F
+        </p>
+        <p>
+          <i class=""></i>
+          <%= weather.description %>
+        </p>
+      </div>
+    <% } %>
+
+  <!-- <label for="cityInput">Enter city:</label>
   <input type="text" id="cityInput" placeholder="City">
   <button onclick="getWeather()">Get Weather</button>
-  <div id="weatherData"></div>
+  <div id="weatherData"></div> -->
 
-  <script>
+  <!-- <script>
     async function getWeather() {
       const cityInput = document.getElementById('cityInput').value;
       const response = await fetch(`/weather/${cityInput}`);
@@ -27,6 +50,6 @@
           <p>Description: ${data.description}</p>
       `;
     }
-  </script>
+  </script> -->
 </body>
 </html>

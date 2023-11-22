@@ -1,6 +1,6 @@
 const fetch = require('node-fetch');
 const Weather = require('../models/weatherModel');
-const config = require('../config/config');
+const config = require('../../config/config');
 
 async function getWeatherByCity(city) {
   const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${config.openWeatherApiKey}`;
